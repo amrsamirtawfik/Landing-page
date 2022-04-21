@@ -1,6 +1,6 @@
 # Landing-page
 
-To open the project, just open the index file.
+To open the project,press on the green "code" button then download zip, then just open the index.html file.
 
 The HTML structure: -
 1.	Header elements which contain the navigation bar and the title of the page.
