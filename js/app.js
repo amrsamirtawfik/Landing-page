@@ -43,7 +43,7 @@ navBar.innerHTML=navHtmlList; //adding the html code inside the navBar
 createNavBar(); //creating the navigation bar
 
 /** now making the highlights at the nav menu on scroll**/
-const navli=document.querySelectorAll("li"); //selecting all the navlists made
+const navli=document.querySelectorAll(".page__header .navbar__menu  li"); //selecting all the navlists made
 window.addEventListener('scroll',()=>{
   let current = ''; //this variable will store the id of the section active
   sections.forEach(section => {
@@ -55,17 +55,32 @@ window.addEventListener('scroll',()=>{
   })
 for(const li of navli){
 
-li.setAttribute('id',''); //remove the active id if found
+li.classList.remove('active'); //remove the active id if found
   if (li.classList.contains(current)) //checking the active section
   {
-    li.setAttribute('id','active'); //// Add id 'active' to section when near top of viewport
+    li.classList.add('active'); //// Add id 'active' to section when near top of viewport
 
   }
 }
 });
+//making the scroll smooth on click
+
+const links = document.querySelectorAll(".page__header .navbar__menu li a");
+
+for (const link of links) {
+  link.addEventListener("click", smoothyClick);
+}
+
+function smoothyClick(evnt) {
+  evnt.preventDefault();
+  const href = this.getAttribute("href");
+
+  document.querySelector(href).scrollIntoView({
+  behavior: "smooth"
+  });
+}
 /**
  * End Helper Functions
  * Begin Main Functions
  *
 */
-
