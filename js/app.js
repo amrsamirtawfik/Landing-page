@@ -49,10 +49,18 @@ window.addEventListener('scroll',()=>{
   sections.forEach(section => {
   const sectionTop=section.offsetTop;
   const sectionHeight = section.clientHeight;
+
+
   if(pageYOffset>=(sectionTop - sectionHeight/3)){
     current=section.getAttribute('id');//storing the id of the active section
   }
   })
+  for (const s of sections){
+    s.classList.remove('active');
+    if(s.classList.contains(current)){
+      s.classList.add('active');
+    }
+  }
 for(const li of navli){
 
 li.classList.remove('active'); //remove the active id if found
