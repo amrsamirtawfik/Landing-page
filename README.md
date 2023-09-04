@@ -3,8 +3,8 @@
 # How to use
 
 * To open the project:-
-  **Simply Clone the project or download zip.
-  ** Open the index.html file.
+  * Simply Clone the project or download zip.
+  * Open the index.html file.
 
 
 
